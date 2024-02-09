@@ -29,14 +29,15 @@ body {
 /* CABEÇALHO */
 
 .cabecalho__container {
+    display: flex;
+    justify-content: space-between;
     background-color: var(--branco);
     height: 80px;
     width: 100%;
-    padding: 0 25px;
+    padding: 1rem 0.5rem;
 }
 
 .logo__item {
-    padding: 15px 0px;
     cursor: pointer;
 }
 
@@ -47,10 +48,8 @@ body {
     font-size: 16px;
 }
 
-.pesquisar__input-teclado{
-    position: absolute;
-    right: 16%;
-    top: 30%;
+.pesquisar__input::placeholder {
+    color: var(--cinza-claro);
 }
 
 .pesquisar__btn {
@@ -68,32 +67,40 @@ body {
     background-color: var(--branco);
 }
 
-.cabecalho__videos {
-    background-image: url(../img/topbar/video_call.png);
-    background-repeat: no-repeat;
-    background-position: center;
+.cabecalho__icones__item a {
     padding: 20px;
 }
 
+.cabecalho__videos {
+    display: none;
+    background-image: url(../img/topbar/video_call.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .cabecalho__apps {
+    display: none;
     background-image: url(../img/topbar/apps.png);
     background-repeat: no-repeat;
     background-position: center;
-    padding: 13px 30px 13px 13px;
 }
 
 .cabecalho__notificacoes {
     background-image: url(../img/topbar/notifications.png);
     background-repeat: no-repeat;
     background-position: center;
-    padding: 13px 30px 13px 13px;
+}
+
+.cabecalho__pesquisa {
+    background-image: url(../img/topbar/search.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cabecalho__avatar {
     background-image: url(../img/topbar/Avatar.png);
     background-repeat: no-repeat;
     background-position: center;
-    padding: 13px 30px 13px 33px;
 }
 
 .cabecalho__switch {
@@ -150,6 +157,88 @@ body {
     transform: translateX(26px);
   }
 
+/* MENU LATERAL */
+
+.menu__container {
+    font-size: 14px;
+    background-color: var(--branco);
+}
+
+.icone__inicio::before {
+    content: url(../img/sidebar/home.png);
+}
+
+.icone__explorar::before {
+    content: url(../img/sidebar/explore.png);
+}
+
+.icone__shorts::before {
+    content: url(../img/sidebar/airplay.png);
+}
+
+.icone__inscricoes::before {
+    content: url(../img/sidebar/subscriptions.png);
+}
+
+.icone__biblioteca::before {
+    content: url(../img/sidebar/video_library.png);
+}
+
+.icone__historico::before {
+    content: url(../img/sidebar/history.png);
+}
+
+.icone__relogio::before {
+    content: url(../img/sidebar/history_toggle_off.png);
+}
+
+.icone__like::before {
+    content: url(../img/sidebar/thumb_up_alt.png);
+}
+
+.icone__alura::before {
+    content: url(../img/sidebar/Avatar_Alura.png);
+}
+
+.icone__gaveta::before {
+    content: url(../img/sidebar/Avatar_Gaveta.png);
+}
+
+.icone__ballerini::before {
+    content: url(../img/sidebar/Avatar_Rafa.png);
+}
+
+.icone__iamarino::before {
+    content: url(../img/sidebar/Avatar_Atila.png);
+}
+
+.icone__souto::before {
+    content: url(../img/sidebar/Avatar_Souto.png);
+}
+
+.icone__nerd::before {
+    content: url(../img/sidebar/Avatar_Jovem_Nerd.png);
+}
+
+.icone__deschamps::before {
+    content: url(../img/sidebar/Avatar_Deschamps.png);
+}
+
+.icone__mostrar::before {
+    content: url(../img/sidebar/keyboard_arrow_down.png);
+}
+
+.icone__videos::before {
+    content: url(../img/sidebar/ondemand_video.png);
+}
+
+.icone__filmes::before {
+    content: url(../img/sidebar/movie.png);
+}
+
+.icone__jogos::before {
+    content: url(../img/sidebar/sports_esports.png);
+}
 
 /* SECAO SUPERIOR */
 
@@ -163,8 +252,8 @@ body {
     top: 80px;
     right: 0;
     left: 0;
-    /* transition: transform 0.5s ease-in-out;
-    transform: translateX(0); */
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
 }
 
 .superior__secao__container-wrapper{
@@ -229,10 +318,134 @@ iframe{
     height: 0px;
 }
 
+/* DARK MODE */
+
+.dark__mode {
+    background-color: var(--azul-profundo);
+    color: var(--cinza-medio);
+}
+
+/* CABEÇALHO */
+
+.cabecalho__videos {
+    background-image: url(../img/darkmode/video_call.png);
+}
+
+.cabecalho__apps {
+    background-image: url(../img/darkmode/apps.png);
+}
+
+.cabecalho__notificacoes {
+    background-image: url(../img/darkmode/notifications.png);
+}
+
+.cabecalho__pesquisa {
+    background-image: url(../img/darkmode/search.png);
+}
+
+/* MENU LATERAL */
+
+.icone__inicio.dark__mode::before {
+    content: url(../img/darkmode/home.png);
+}
+
+.icone__explorar.dark__mode::before {
+    content: url(../img/darkmode/explore.png);
+}
+
+.icone__shorts.dark__mode::before {
+    content: url(../img/darkmode/airplay.png);
+}
+
+.icone__inscricoes.dark__mode::before {
+    content: url(../img/darkmode/subscriptions.png);
+}
+
+.icone__biblioteca.dark__mode::before {
+    content: url(../img/darkmode/video_library.png);
+}
+
+.icone__historico.dark__mode::before {
+    content: url(../img/darkmode/history.png);
+}
+
+.icone__relogio.dark__mode::before {
+    content: url(../img/darkmode/history_toggle_off.png);
+}
+
+.icone__like.dark__mode::before {
+    content: url(../img/darkmode/thumb_up_alt.png);
+}
+
+.icone__mostrar.dark__mode::before {
+    content: url(../img/darkmode/keyboard_arrow_down.png);
+}
+
+.icone__videos.dark__mode::before {
+    content: url(../img/darkmode/ondemand_video.png);
+}
+
+.icone__filmes.dark__mode::before {
+    content: url(../img/darkmode/movie.png);
+}
+
+.icone__jogos.dark__mode::before {
+    content: url(../img/darkmode/sports_esports.png);
+}
+
+/* SEÇÂO SUPERIOR */
+
+.superior__slider.dark__mode {
+    background-color: var(--azul-profundo);
+}
+
+/* SEÇÃO VIDEOS */
+
+.titulo-video.dark__mode {
+    color: var(--cinza-medio);
+}
+
+.titulo-descricao {
+    color: var(--cinza-medio);
+}
+
+/* MEDIA QUERIES */
+
 @media(min-width: 834px) {
 
     body {
         height: 100vh;
+    }
+
+    /* ESTILOS DO CABEÇALHO */
+
+    .pesquisar__input-teclado{
+        position: absolute;
+        right: 35%;
+        top: 30%;
+    }
+
+    .cabecalho__videos,
+    .cabecalho__apps {
+        display: inline;
+    }
+
+    .cabecalho__pesquisa {
+        display: none;
+    }
+
+    /* ESTILOS DO MENU LATERAL */
+
+    .menu__container {
+        font-size: 16px;
+    }
+
+    .menu__lista {
+        padding-top: 15px;
+    }
+
+    .menu__lista i {
+        width: 100%;
     }
 
     /* ESTILOS DA SECAO SUPERIOR */
@@ -253,12 +466,30 @@ iframe{
 
 }
 
+@media (min-width: 1156px) {
+    .pesquisar__input-teclado {
+        right: 18%;
+    }
+}
+
 @media(min-width: 1440px) {
+
+    /* ESTILOS DO CABEÇALHO */
+
+    .pesquisar__input-teclado{
+        right: 19%;
+    }
 
     /* SEÇÃO SUPERIOR */
 
     .superior__secao__container {
         left: 247px;
+    }
+
+    /* ESTILOS DO MENU LATERAL */
+
+    .menu__lista {
+        border-bottom: 1.5px solid var(--azul-medio);
     }
 
     /* ESTILOS VIDEOS */
