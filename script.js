@@ -1,6 +1,6 @@
 const videosContainer = document.querySelector(".videos__container");
 const searchBar = document.querySelector(".pesquisar__input");
-const categoryItens = document.querySelectorAll(".superior__item");
+const categoryItems = document.querySelectorAll(".superior__item");
 
 async function searchShowVideos() {
 	try {
@@ -13,7 +13,7 @@ async function searchShowVideos() {
             }
 			videosContainer.innerHTML += `
             <li class="videos__item ${video.categoria}">
-                <iframe 
+                <iframe class="iframe-video"
                     src="${video.url}" 
                     title="${video.titulo}"
                     frameborder="0" 
@@ -35,7 +35,7 @@ async function searchShowVideos() {
 searchShowVideos();
 
 searchBar.addEventListener("input", searchFilter);
-categoryItens.forEach(item => item.addEventListener("click", categoryFilter));
+categoryItems.forEach(item => item.addEventListener("click", categoryFilter));
 
 function searchFilter() {
     const videos = document.querySelectorAll(".videos__item");
@@ -67,6 +67,19 @@ function categoryFilter() {
             }
         } else {
             video.style.display = "block";
+        }
+    })
+
+    selectTask(categoryName);
+}
+
+function selectTask(categoryName) {
+    categoryItems.forEach(item => {
+        let name = item.getAttribute("name");
+        if (name === categoryName) {
+            item.classList.add("selected");
+        } else {
+            item.classList.remove("selected");
         }
     })
 }

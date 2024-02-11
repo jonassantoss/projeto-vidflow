@@ -64,7 +64,7 @@ body {
 
 .cabecalho__audio {
     border: 0px;
-    background-color: var(--branco);
+    background-color: transparent;
 }
 
 .cabecalho__icones__item a {
@@ -276,6 +276,11 @@ body {
     transition: .5s;
 }
 
+.selected {
+    background-color: var(--azul-destaque-light);
+    color: var(--branco);
+}
+
 .superior__slider{
     position: absolute;
     right: 0%;
@@ -295,6 +300,7 @@ iframe{
     border-radius: 10px;
     width: 100%;
     height: 62%;
+    border: 2px solid var(--branco);
 }
 
 .descricao-video .img-canal{
@@ -327,19 +333,32 @@ iframe{
 
 /* CABEÇALHO */
 
-.cabecalho__videos {
+.pesquisar__btn.dark__mode,
+.pesquisar__input.dark__mode {
+    background-color: var(--azul-profundo);
+}
+
+.pesquisar__input.dark__mode {
+    border-color: var(--cinza-medio);
+}
+
+.pesquisar__input.dark__mode::placeholder {
+    color: var(--cinza-medio);
+}
+
+.cabecalho__videos.dark__mode {
     background-image: url(../img/darkmode/video_call.png);
 }
 
-.cabecalho__apps {
+.cabecalho__apps.dark__mode {
     background-image: url(../img/darkmode/apps.png);
 }
 
-.cabecalho__notificacoes {
+.cabecalho__notificacoes.dark__mode {
     background-image: url(../img/darkmode/notifications.png);
 }
 
-.cabecalho__pesquisa {
+.cabecalho__pesquisa.dark__mode {
     background-image: url(../img/darkmode/search.png);
 }
 
@@ -395,8 +414,19 @@ iframe{
 
 /* SEÇÂO SUPERIOR */
 
+.superior__secao__container.dark__mode,
 .superior__slider.dark__mode {
     background-color: var(--azul-profundo);
+}
+
+.superior__item.dark__mode {
+    background-color: var(--azul-medio);
+    color: var(--cinza-medio);
+}
+
+.selected.dark__mode {
+    background-color: var(--azul-destaque-dark);
+    color: var(--branco);
 }
 
 /* SEÇÃO VIDEOS */
@@ -407,6 +437,17 @@ iframe{
 
 .titulo-descricao {
     color: var(--cinza-medio);
+}
+
+/* SEÇÃO VIDEOS */
+
+.videos__container.dark__mode iframe {
+    border: 2px solid var(--azul-destaque-light);
+}
+
+.descricao-video.dark__mode .titulo-video,
+.descricao-video.dark__mode .titulo-canal {
+    color: var(--branco);
 }
 
 /* MEDIA QUERIES */
@@ -454,7 +495,11 @@ iframe{
         border-top: var(--azul-medio) 1px solid;
         border-bottom: var(--azul-medio) 1px solid;
         width: auto;
-        left: 82px;
+        left: 7%;
+    }
+
+    .superior__slider {
+        right: 7%;
     }
 
     /*ESTILOS SEÇÃO VÍDEOS */
@@ -486,6 +531,10 @@ iframe{
         left: 247px;
     }
 
+    .superior__slider {
+        right: 15%;
+    }
+
     /* ESTILOS DO MENU LATERAL */
 
     .menu__lista {
@@ -499,4 +548,10 @@ iframe{
         padding-left: 248px;
     }
 
+}
+
+@media (min-width: 1560px) {
+    .superior__slider {
+        left: 100%;
+    }
 }
