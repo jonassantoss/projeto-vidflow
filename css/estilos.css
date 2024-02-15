@@ -333,7 +333,6 @@ iframe{
 
 /* CABEÇALHO */
 
-.pesquisar__btn.dark__mode,
 .pesquisar__input.dark__mode {
     background-color: var(--azul-profundo);
 }
@@ -344,6 +343,10 @@ iframe{
 
 .pesquisar__input.dark__mode::placeholder {
     color: var(--cinza-medio);
+}
+
+.pesquisar__btn.dark__mode {
+    background-color: var(--cinza-medio);
 }
 
 .cabecalho__videos.dark__mode {
