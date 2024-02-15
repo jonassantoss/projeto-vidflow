@@ -16,7 +16,7 @@ Para começar a utilizar a Fake API e testar o projeto Vidflow, siga os passos a
 
 ### 1. Clonar o repositório
 
-Clone o repositório do projeto Vidflow para o seu ambiente local usando o seguinte comando no terminal: ```git clone https://github.com/jonassantoss/vidflow.git```
+Clone o repositório do projeto Vidflow para o seu ambiente local usando o seguinte comando no terminal: ```git clone "https://github.com/jonassantoss/vidflow.git"```
 
 ### 2. Instalar o json-server
 
